@@ -32,6 +32,9 @@ docs/notebooklm-artifacts/
 # Process intelligence (local captures — see .meta.example/ for templates)
 .meta/
 
+# Agent session files (developer-local — condensed-memory.md IS tracked)
+.agent/memory/session-*.md
+
 # OS
 .DS_Store
 Thumbs.db

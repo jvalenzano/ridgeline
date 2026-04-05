@@ -84,6 +84,9 @@ explicit user confirmation before continuing.
 
 ## Development Setup
 
+- Copy `.meta.example/` to `.meta/` for process intelligence capture.
+- See `docs/developer-workspace.md` for all local workspace files.
+
 ```bash
 # Install all dependencies (including dev)
 uv sync --all-extras
@@ -175,6 +178,7 @@ Types: `gap`, `win`, `friction`, `idea`, `template-improvement`.
 
 **Review cycle:** Periodically review `.meta/` to deduplicate, categorize,
 and promote recurring patterns to CLAUDE.md, ADRs, or template improvements.
+See `docs/developer-workspace.md` for the full review workflow.
 
 ## Self-Improvement Loop
 

@@ -1,16 +1,12 @@
 # .meta/ — Process Intelligence Layer
 
-> **This directory is a template.** Copy it to `.meta/` (which is gitignored)
-> to start capturing process intelligence for your development sessions.
-
-## Quick Start
-
-```bash
-# Copy the example files to your local .meta/ directory
-cp -r .meta.example/ .meta/
-
-# .meta/ is already in .gitignore — your captures stay local
-```
+> **This directory is a template.** Copy it to `.meta/` to start capturing
+> process intelligence for your development sessions.
+>
+> ```bash
+> cp -r .meta.example/ .meta/
+> # .meta/ is already in .gitignore — your captures stay local
+> ```
 
 ## What This Is
 
@@ -26,9 +22,9 @@ that improves the craft over time.
 | File | Purpose | Updated by |
 |------|---------|------------|
 | `insights.md` | Running log of `★ Insight` blocks produced by the agent | Agent (auto-appended after each insight) |
-| `insights-index.csv` | Machine-readable index for scanning/filtering insights | Agent (auto-appended) |
+| `insights-index.csv` | Machine-readable index for scanning and filtering insights | Agent (auto-appended) |
 | `captains-log.md` | Broader observations: friction, gaps, wins, ideas | Developer or agent |
-| `review-notes/` | Outputs from periodic review passes | Developer or `/review-meta` |
+| `review-notes/` | Outputs from periodic review and deduplication passes | Developer or `/review-meta` skill |
 
 ## How It Works
 
@@ -44,19 +40,20 @@ A one-liner also goes into `insights-index.csv` for quick scanning.
 ### Manual Capture (Captain's Log)
 
 When you notice something — a friction point, a gap in tooling, something that
-worked surprisingly well — tell the agent: "log that" or "add to captain's log."
-Or append directly.
+worked surprisingly well — tell the agent "log that" or "add to captain's log."
+Or append directly to `captains-log.md`.
 
 **Types:** `gap`, `win`, `friction`, `idea`, `template-improvement`
 
 ### Periodic Review
 
 Every 1-2 weeks, review `.meta/` to:
-- Deduplicate insights that say the same thing across sessions
-- Categorize uncategorized entries
-- Promote recurring patterns to `CLAUDE.md` or a new ADR
-- Extract template improvements → backlog for the GHE `claude-code-template`
-- Archive stale observations
+
+1. **Deduplicate** insights that say the same thing across sessions
+2. **Categorize** any uncategorized entries
+3. **Promote** recurring patterns to `CLAUDE.md` or a new ADR in `docs/decisions/`
+4. **Extract** template improvements → backlog for the upstream template
+5. **Archive** stale observations to `review-notes/`
 
 ## Why Gitignored?
 
@@ -71,7 +68,7 @@ Each developer copies it to `.meta/` and builds their own capture history.
 
 The most valuable outcome of `.meta/` is **template improvements**. When captain's
 log entries tagged `template-improvement` accumulate, they become PRs against the
-GHE `claude-code-template`. This is the slow feedback loop:
+upstream `claude-code-template`. This is the slow feedback loop:
 
 ```
 Session insights → .meta/ capture → periodic review → template PR → all future projects benefit
