@@ -155,6 +155,27 @@ File naming conventions:
 
 Discover all available skills: check `.claude/skills/` for SKILL.md files.
 
+## Process Intelligence (.meta/)
+
+This project captures development insights and process observations in `.meta/`
+(gitignored — see `.meta.example/` for structure and conventions).
+
+**Insight capture (automatic):** After producing any `★ Insight` block, append
+it to `.meta/insights.md` with date, session name, category, context, and
+trigger. Also add a one-liner to `.meta/insights-index.csv`.
+
+Categories: `architecture`, `frontend`, `backend`, `workflow`, `tooling`,
+`data`, `testing`, `devex`, `strategic`.
+
+**Captain's log (situational):** When the user flags friction, a gap, a win,
+or an idea — or when you notice significant process friction — append an entry
+to `.meta/captains-log.md` with type, timestamp, and description.
+
+Types: `gap`, `win`, `friction`, `idea`, `template-improvement`.
+
+**Review cycle:** Periodically review `.meta/` to deduplicate, categorize,
+and promote recurring patterns to CLAUDE.md, ADRs, or template improvements.
+
 ## Self-Improvement Loop
 
 When you encounter friction — confusing instructions, missing tools,
@@ -164,6 +185,8 @@ repeated manual steps, or unexpected failures:
 2. **Propose** a specific fix with rationale. Do NOT apply yet.
 3. **Ask**: "Should I update [file] with [change]?"
 4. **Apply** only after receiving permission.
+5. **Log it** — append to `.meta/captains-log.md` if the friction
+   is a pattern worth tracking.
 
 Rules:
 - Do NOT create or overwrite workflows, skills, or CLAUDE files without

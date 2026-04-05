@@ -29,6 +29,9 @@ venv/
 .superpowers/
 docs/notebooklm-artifacts/
 
+# Process intelligence (local captures — see .meta.example/ for templates)
+.meta/
+
 # OS
 .DS_Store
 Thumbs.db
